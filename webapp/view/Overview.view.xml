@@ -1,0 +1,27 @@
+<mvc:View
+   controller="demo01.controller.Overview"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<App>
+		<Page title="overview">
+			<content>
+				<mvc:XMLView viewName="demo01.view.Table"/>
+				<!--<mvc:XMLView viewName="demo01.view.SmartTable"/>-->
+			</content>
+			<footer>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button
+						id="saveButton"
+						type="Emphasized"
+						text="{i18n>saveButtonText}"
+						press="onSave"/>
+					<Button
+						id="doneButton"
+						text="{i18n>cancelButtonText}"
+						press="onResetChanges"/>
+				</Toolbar>
+			</footer>
+		</Page>
+	</App>
+</mvc:View>

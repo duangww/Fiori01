@@ -1,0 +1,71 @@
+<mvc:View
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m" 
+		controllerName="demo01.controller.Table"
+    	displayBlock="true">
+			<Panel headerText = 'table ctrol'>
+				<Table  
+					id="table"
+					class="sapUiResponsiveMargin"
+					width="auto"
+					growing="true"
+					growingThreshold="10"
+					items="{path:'spfli>/spfliSet',
+					        parameters:{$count: true}
+					        }">
+					<headerToolbar>
+						<Toolbar>
+							<ToolbarSpacer/>
+							<SearchField width="20%" search="onFilter"/>
+							<Button
+								id="refreshUsersButton"
+								icon="sap-icon://refresh"
+								tooltip="{i18n>refreshButtonText}"
+								press="onRefresh"/>
+							<Button
+								id="sortUsersButton"
+								press="onSort"
+								tooltip="{i18n>sortButtonText}"
+								icon="sap-icon://sort"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column width="12em">
+							<Text text="航线代码"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="航班连接 Id"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+							<Text text="国家"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+							<Text text="到达城市"/>
+						</Column>
+						<Column hAlign="End">
+							<Text text="到达国家"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{spfli>Carrid}"/>
+							</cells>
+							<cells>
+								<Text text="{spfli>Connid}"/>
+							</cells>
+							<cells>
+								<Text text="{spfli>Countryfr}"/>
+							</cells>
+							<cells>
+								<Text text="{spfli>Cityto}"/>
+							</cells>
+							<cells>
+								<Text text="{spfli>Countryto}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+</mvc:View>
