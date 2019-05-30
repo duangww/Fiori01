@@ -42,7 +42,6 @@ sap.ui.define([
 
 			sMessage = aStateTextIds[iOrder];
 			MessageToast.show(sMessage);
-			var a = 1;
 		}
 
 	});
